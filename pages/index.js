@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/Home.module.css";
 import { Box, Button, Link, Text } from "@chakra-ui/react";
 import NameCollector from "../src/NameCollector/NameCollector";
 import { ExceptionSetting } from "../src/ExceptionSetting/ExceptionSetting";
+import Head from "next/head";
 
 const NAME_COLLECTION = "NAME_COLLECTION";
 const EXCEPTION_SETTING = "EXCEPTION_SETTING";
@@ -76,6 +76,60 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <meta charset="utf-8" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+
+        <link rel="manifest" href="/manifest.json" />
+
+        <title>Mystery Santa</title>
+        <meta
+          name="description"
+          content="Free online secret santa generator. Enter your name and your friends names and you will all be sent a text with who you need to by presents for!"
+        />
+
+        <meta property="og:url" content="http://mysterysanta.co.uk/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Mystery Santa" />
+        <meta
+          property="og:description"
+          content="Free online secret santa generator. Enter your name and your friends names and you will all be sent a text with who you need to by presents for!"
+        />
+        <meta
+          property="og:image"
+          content="http://mysterysanta.co.uk/android-chrome-512x512.png"
+        />
+
+        <meta property="twitter:url" content="http://mysterysanta.co.uk/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mystery Santa" />
+        <meta
+          name="twitter:description"
+          content="Free online secret santa generator. Enter your name and your friends names and you will all be sent a text with who you need to by presents for!"
+        />
+        <meta
+          name="twitter:image"
+          content="http://mysterysanta.co.uk/android-chrome-512x512.png"
+        />
+      </Head>
       <>
         <Box margin={4}>
           <Text fontSize="4xl" as="h1">
