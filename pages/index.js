@@ -10,20 +10,20 @@ const NAME_COLLECTION = "NAME_COLLECTION";
 const EXCEPTION_SETTING = "EXCEPTION_SETTING";
 
 export default function Home() {
-  const [people, setPeople] = useState([
-    { id: uuidv4(), name: "Gavin", number: "+447414525394", exceptions: [] },
-    { id: uuidv4(), name: "Linsey", number: "+447414525394", exceptions: [] },
-    { id: uuidv4(), name: "Scott", number: "+447414525394", exceptions: [] },
-    { id: uuidv4(), name: "Roland", number: "+447414525394", exceptions: [] },
-    { id: uuidv4(), name: "Steph", number: "+447414525394", exceptions: [] },
-    { id: uuidv4(), name: "Naomi", number: "+447414525394", exceptions: [] },
-    { id: uuidv4(), name: "Elaine", number: "+447414525394", exceptions: [] },
-    { id: uuidv4(), name: "Stephen", number: "+447414525394", exceptions: [] },
-  ]);
-  const [step, setStep] = useState(EXCEPTION_SETTING);
+  // const [people, setPeople] = useState([
+  //   { id: uuidv4(), name: "Gavin", number: "+447414525394", exceptions: [] },
+  //   { id: uuidv4(), name: "Linsey", number: "+447414525394", exceptions: [] },
+  //   { id: uuidv4(), name: "Scott", number: "+447414525394", exceptions: [] },
+  //   { id: uuidv4(), name: "Roland", number: "+447414525394", exceptions: [] },
+  //   { id: uuidv4(), name: "Steph", number: "+447414525394", exceptions: [] },
+  //   { id: uuidv4(), name: "Naomi", number: "+447414525394", exceptions: [] },
+  //   { id: uuidv4(), name: "Elaine", number: "+447414525394", exceptions: [] },
+  //   { id: uuidv4(), name: "Stephen", number: "+447414525394", exceptions: [] },
+  // ]);
+  // const [step, setStep] = useState(EXCEPTION_SETTING);
 
-  // const [people, setPeople] = useState([]);
-  // const [step, setStep] = useState(NAME_COLLECTION);
+  const [people, setPeople] = useState([]);
+  const [step, setStep] = useState(NAME_COLLECTION);
 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
