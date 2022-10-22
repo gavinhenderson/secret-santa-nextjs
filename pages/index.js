@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/Home.module.css";
 import { Box, Button, Link, Text } from "@chakra-ui/react";
 import NameCollector from "../src/NameCollector/NameCollector";
@@ -9,13 +10,42 @@ const NAME_COLLECTION = "NAME_COLLECTION";
 const EXCEPTION_SETTING = "EXCEPTION_SETTING";
 
 export default function Home() {
-  const [people, setPeople] = useState([]);
-  const [step, setStep] = useState(NAME_COLLECTION);
+  const [people, setPeople] = useState([
+    { id: uuidv4(), name: "Gavin", number: "+447414525394", exceptions: [] },
+    { id: uuidv4(), name: "Linsey", number: "+447414525394", exceptions: [] },
+    { id: uuidv4(), name: "Scott", number: "+447414525394", exceptions: [] },
+    { id: uuidv4(), name: "Roland", number: "+447414525394", exceptions: [] },
+    { id: uuidv4(), name: "Steph", number: "+447414525394", exceptions: [] },
+    { id: uuidv4(), name: "Naomi", number: "+447414525394", exceptions: [] },
+    { id: uuidv4(), name: "Elaine", number: "+447414525394", exceptions: [] },
+    { id: uuidv4(), name: "Stephen", number: "+447414525394", exceptions: [] },
+  ]);
+  const [step, setStep] = useState(EXCEPTION_SETTING);
 
-  const generateMatches = () => {};
-  const data = null;
-  const loading = null;
-  const error = null;
+  // const [people, setPeople] = useState([]);
+  // const [step, setStep] = useState(NAME_COLLECTION);
+
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  const generateMatches = async (body) => {
+    setLoading(true);
+    try {
+      const response = await fetch("./api/generate-matches", {
+        method: "POST",
+        body: JSON.stringify(body),
+      });
+      const result = await response.json();
+      setLoading(false);
+      setData(true);
+    } catch (e) {
+      console.log(e);
+      setError(true);
+      setLoading(false);
+    }
+    console.log(result);
+  };
 
   const toggleException = (personToToggleId, exception) => {
     const newPeople = people.map((person) => {
@@ -53,7 +83,7 @@ export default function Home() {
           </Text>
           <Text fontSize="s" fontStyle="italic">
             by{" "}
-            <Link color="teal.500" href="https://www.gavinhenderson.me">
+            <Link color="teal.500" href="https://gavinhenderson.me">
               Gavin Henderson
             </Link>
           </Text>
