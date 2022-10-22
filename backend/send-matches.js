@@ -1,3 +1,15 @@
+const twilio = require("twilio");
+
+const from = process.env.FROM;
+const sid = process.env.SID;
+const key = process.env.KEY;
+
+let client = null;
+
+if (sid && key) {
+  client = twilio(sid, key);
+}
+
 export const sendMatches = async (people, matches) => {
   let textsSent = [];
 
@@ -12,10 +24,12 @@ export const sendMatches = async (people, matches) => {
 
     console.log(message);
 
-    // await client.messages.create({
-    //   body: message,
-    //   to: currentPerson.number,
-    //   from: twilioFrom,
-    // });
+    if (client) {
+      await client.messages.create({
+        body: message,
+        to: currentPerson.number,
+        from: from,
+      });
+    }
   }
 };
