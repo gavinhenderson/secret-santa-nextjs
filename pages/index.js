@@ -106,7 +106,10 @@ export default function Home() {
           content="Free online secret santa generator. Enter your name and your friends names and you will all be sent a text with who you need to by presents for!"
         />
 
-        <meta property="og:url" content="http://mysterysanta.co.uk/" />
+        <meta
+          property="og:url"
+          content="https://secret-santa-nextjs.vercel.app//"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Mystery Santa" />
         <meta
@@ -115,10 +118,13 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="http://mysterysanta.co.uk/android-chrome-512x512.png"
+          content="https://secret-santa-nextjs.vercel.app//android-chrome-512x512.png"
         />
 
-        <meta property="twitter:url" content="http://mysterysanta.co.uk/" />
+        <meta
+          property="twitter:url"
+          content="https://secret-santa-nextjs.vercel.app//"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Mystery Santa" />
         <meta
@@ -127,7 +133,7 @@ export default function Home() {
         />
         <meta
           name="twitter:image"
-          content="http://mysterysanta.co.uk/android-chrome-512x512.png"
+          content="https://secret-santa-nextjs.vercel.app//android-chrome-512x512.png"
         />
       </Head>
       <>
