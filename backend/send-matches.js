@@ -22,14 +22,16 @@ export const sendMatches = async (people, matches) => {
 
     textsSent.push(message);
 
-    console.log(message);
-
     if (client) {
+      console.log(`SENT: ${message}`);
+
       await client.messages.create({
         body: message,
         to: currentPerson.number,
         from: from,
       });
+    } else {
+      console.log(`NOT SENT: ${message}`);
     }
   }
 };
